@@ -19,6 +19,20 @@ const values = [
   { title: "Licensed & insured, always", detail: "Every job, residential or commercial, is covered - no exceptions." },
 ];
 
+const process = [
+  { step: "01", title: "Walk the property", detail: "Before any water hits a surface, we look at what we're working with - material, condition, landscaping, anything that needs protecting." },
+  { step: "02", title: "Match the method", detail: "Soft wash for siding and roofs, surface cleaning for concrete, hand detail for the tight spots. The right pressure and chemistry for that specific surface, not a one-size-fits-all setting." },
+  { step: "03", title: "Do the work", detail: "Clean systematically, section by section, so nothing gets missed and nothing gets rushed." },
+  { step: "04", title: "Walk it with you", detail: "Before we call a job finished, we go over the result together - not just drive off once the truck's packed up." },
+];
+
+const facts = [
+  { label: "Based In", value: `${business.city}, ${business.state}` },
+  { label: "Coverage", value: "NC & VA" },
+  { label: "Specialties", value: "9 Services" },
+  { label: "Status", value: "Licensed & Insured" },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -85,7 +99,94 @@ export default function AboutPage() {
               ))}
             </div>
 
+            <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-4">
+              {facts.map((f) => (
+                <div key={f.label} className="bg-white p-4">
+                  <p className="text-data text-[0.65rem] uppercase tracking-wide text-steel">
+                    {f.label}
+                  </p>
+                  <p className="text-display mt-1 text-base text-navy">{f.value}</p>
+                </div>
+              ))}
+            </div>
+
             <Button href="/contact" className="mt-10">Get a Free Quote</Button>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-ink py-20 text-white sm:py-28">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow dark>How We Work</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl">
+              The same process, every property.
+            </h2>
+            <p className="mt-4 text-white/70">
+              Whether it&apos;s a driveway or a full commercial exterior, every
+              job follows the same four steps - no shortcuts taken to save
+              time.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {process.map((p, i) => (
+              <div key={p.step} className="reveal" data-reveal-delay={i * 80}>
+                <span className="text-data text-sm text-orange">{p.step}</span>
+                <h3 className="text-display mt-3 text-lg">{p.title}</h3>
+                <p className="mt-2 text-sm text-white/60">{p.detail}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="reveal relative aspect-[4/3] overflow-hidden">
+            <Image
+              src="/images/rig.jpg"
+              alt="Under Pressure Xteriors pressure washing rig - tandem-axle trailer with water tank system towed by a white pickup truck"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="reveal">
+            <Eyebrow>The Rig</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              Equipped to run a full day, anywhere in NC or VA
+            </h2>
+            <p className="mt-4 text-ink/70">
+              The trailer carries its own water supply and equipment, which
+              means jobs aren&apos;t dependent on a customer&apos;s outdoor spigot or
+              water pressure - useful for larger residential properties and
+              essential for commercial jobs where water access can be
+              limited or inconvenient. It&apos;s set up to handle everything from
+              a single driveway to a full-property commercial route in one
+              trip.
+            </p>
+            <p className="mt-4 text-ink/70">
+              That self-contained setup is also what makes the NC/VA travel
+              radius realistic - the rig rolls out already stocked and ready,
+              so a job in Zebulon and a job in South Hill, VA can both happen
+              in the same week without missing a beat.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="grain bg-orange py-14 text-white">
+        <Container className="flex flex-col items-center gap-5 text-center">
+          <h2 className="text-display max-w-xl text-2xl sm:text-3xl">
+            Have a question before you book?
+          </h2>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button href="/contact" variant="secondary" className="!bg-ink hover:!bg-ink-soft">
+              Contact Us
+            </Button>
+            <Button href={business.phoneHref} variant="ghost" className="border-white/40 text-white hover:border-white">
+              Call {business.phone}
+            </Button>
           </div>
         </Container>
       </section>

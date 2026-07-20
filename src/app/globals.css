@@ -56,6 +56,21 @@ body {
 .reveal { opacity: 0; transform: translateY(22px); }
 .reveal.is-visible { animation: var(--animate-rise); }
 
+/* Hero content: animates automatically on paint, never gated behind JS/
+   IntersectionObserver, so it can never be stuck invisible on a slow
+   connection. Keeps the same rise-in motion as .reveal but autoplays. */
+.hero-in {
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-in-1 { animation-delay: 0.06s; }
+.hero-in-2 { animation-delay: 0.12s; }
+.hero-in-3 { animation-delay: 0.18s; }
+.hero-in-4 { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in { animation: none; opacity: 1; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
@@ -68,6 +83,7 @@ body {
 
 .text-display {
   font-family: var(--font-display);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
