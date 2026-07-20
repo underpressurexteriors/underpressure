@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 const clientTypes = [
   { title: "Retail & Storefronts", detail: "Sidewalks, entryways, and storefront glass that stay presentable for foot traffic." },
-  { title: "HOAs & Communities", detail: "Recurring maintenance for shared amenities, entrance signage, sidewalks, and common-area buildings." },
-  { title: "Property Managers", detail: "Standing service across a portfolio of properties, billed and scheduled on your terms." },
+  { title: "HOAs & Communities", detail: "Recurring maintenance for shared amenities, entrance signage, sidewalks, and common-area buildings.", href: "/property-management" },
+  { title: "Property Managers", detail: "Standing service across a portfolio of properties, billed and scheduled on your terms.", href: "/property-management" },
   { title: "Industrial & Warehouse", detail: "Loading docks, warehouse aprons, and equipment pads that need routine degreasing and cleaning." },
 ];
 
@@ -67,12 +67,23 @@ export default function CommercialPage() {
               having to schedule it every time.
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {clientTypes.map((c) => (
-                <div key={c.title} className="border-l-2 border-orange pl-4">
-                  <h3 className="text-display text-base text-navy">{c.title}</h3>
-                  <p className="mt-1 text-sm text-ink/70">{c.detail}</p>
-                </div>
-              ))}
+              {clientTypes.map((c) =>
+                c.href ? (
+                  <Link
+                    key={c.title}
+                    href={c.href}
+                    className="border-l-2 border-orange pl-4 hover:bg-white/50"
+                  >
+                    <h3 className="text-display text-base text-navy">{c.title} →</h3>
+                    <p className="mt-1 text-sm text-ink/70">{c.detail}</p>
+                  </Link>
+                ) : (
+                  <div key={c.title} className="border-l-2 border-orange pl-4">
+                    <h3 className="text-display text-base text-navy">{c.title}</h3>
+                    <p className="mt-1 text-sm text-ink/70">{c.detail}</p>
+                  </div>
+                )
+              )}
             </div>
             <Button href="/contact" className="mt-8">Request a Commercial Quote</Button>
           </div>
