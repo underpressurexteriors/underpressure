@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@fontsource/oswald/600.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
@@ -9,6 +9,12 @@ import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
 import StickyCallBar from "@/components/StickyCallBar";
 import { business } from "@/lib/business";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0d4657",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.url),

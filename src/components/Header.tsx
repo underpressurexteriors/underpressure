@@ -22,6 +22,7 @@ export default function Header() {
             alt={`${business.name} logo`}
             width={657}
             height={160}
+            sizes="160px"
             className="h-9 w-auto sm:h-10"
             priority
           />
