@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { blogPosts } from "@/lib/blog";
+import { resources } from "@/lib/resources";
 import { business } from "@/lib/business";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/commercial-pressure-washing",
     "/service-areas",
     "/about",
+    "/blog",
+    "/resources",
     "/gallery",
     "/faq",
     "/contact",
@@ -35,6 +39,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const blogRoutes = blogPosts.map((p) => ({
+    url: `${business.url}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  const resourceRoutes = resources.map((r) => ({
+    url: `${business.url}/resources/${r.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.65,
+  }));
+
   const legalRoutes = ["/privacy-policy", "/terms-of-service"].map((path) => ({
     url: `${business.url}${path}`,
     lastModified: new Date(),
@@ -42,5 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.2,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...locationRoutes, ...legalRoutes];
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...locationRoutes,
+    ...blogRoutes,
+    ...resourceRoutes,
+    ...legalRoutes,
+  ];
 }

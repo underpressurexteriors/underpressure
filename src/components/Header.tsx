@@ -100,6 +100,12 @@ export default function Header() {
           <Link href="/about" className="text-display text-sm text-ink hover:text-orange-dark">
             About
           </Link>
+          <Link href="/blog" className="text-display text-sm text-ink hover:text-orange-dark">
+            Blog
+          </Link>
+          <Link href="/resources" className="text-display text-sm text-ink hover:text-orange-dark">
+            Resources
+          </Link>
           <Link href="/gallery" className="text-display text-sm text-ink hover:text-orange-dark">
             Gallery
           </Link>
@@ -166,6 +172,12 @@ export default function Header() {
             </Link>
             <Link href="/about" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
               About
+            </Link>
+            <Link href="/blog" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+              Blog
+            </Link>
+            <Link href="/resources" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+              Resources
             </Link>
             <Link href="/gallery" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Gallery

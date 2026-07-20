@@ -10,6 +10,7 @@ import LocationCard from "@/components/LocationCard";
 import JsonLd from "@/components/JsonLd";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { blogPosts } from "@/lib/blog";
 import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
@@ -219,6 +220,39 @@ export default function Home() {
             <Link href="/service-areas" className="text-sm font-semibold text-orange-dark hover:text-orange">
               View all {locations.length} service areas →
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-20 sm:py-28">
+        <Container>
+          <div className="reveal flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <Eyebrow>From the Blog</Eyebrow>
+              <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+                Learn before you book.
+              </h2>
+            </div>
+            <div className="flex gap-4 text-sm font-semibold">
+              <Link href="/blog" className="text-orange-dark hover:text-orange">Blog →</Link>
+              <Link href="/resources" className="text-orange-dark hover:text-orange">Resources →</Link>
+            </div>
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {blogPosts.slice(0, 3).map((post, i) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="reveal group border border-ink/10 bg-white p-6 hover:border-orange"
+                data-reveal-delay={i * 70}
+              >
+                <span className="text-data text-xs uppercase text-orange-dark">{post.category}</span>
+                <h3 className="text-display mt-2 text-lg leading-tight text-navy group-hover:text-orange-dark">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-sm text-ink/60">{post.readTime}</p>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
