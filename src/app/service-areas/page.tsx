@@ -42,6 +42,19 @@ export default function ServiceAreasPage() {
             ))}
           </div>
 
+          <div className="reveal mt-16 border border-ink/10 bg-white p-8">
+            <h2 className="text-display text-xl text-navy">Why NC and VA together?</h2>
+            <p className="mt-3 max-w-2xl text-ink/70">
+              Zebulon sits close enough to the Virginia border that a
+              self-contained rig - carrying its own water and equipment -
+              makes both states realistic to cover in the same week without
+              adding travel that customers end up paying for. Most of our
+              North Carolina work stays within the Triangle and points east;
+              Virginia work runs along the US-58 and I-95 corridors in the
+              southern part of the state.
+            </p>
+          </div>
+
           <div className="reveal mt-14 border border-ink/10 bg-white p-8 text-center">
             <h2 className="text-display text-2xl text-navy">
               Don&apos;t see your town listed?

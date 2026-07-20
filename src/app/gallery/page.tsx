@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
+import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import { business } from "@/lib/business";
 
@@ -23,6 +25,13 @@ const photos = [
     alt: "Under Pressure Xteriors rig - tandem-axle trailer with water tank system towed by a white pickup truck",
     caption: "Our rig, set up and ready for the next job",
   },
+];
+
+const equipment = [
+  { title: "Self-contained water supply", detail: "The trailer carries its own tank, so jobs aren't dependent on a customer's outdoor spigot or water pressure." },
+  { title: "Rotary surface cleaner", detail: "Cleans flat concrete in even, overlapping passes - no streaking or \"zebra\" pattern from wand work." },
+  { title: "Soft-wash injection system", detail: "Applies the correct cleaning solution at low pressure for siding, roofing, and anything that can't take direct force." },
+  { title: "Extension wands & ladders", detail: "Reach two-story siding, gutters, and rooflines without cutting corners on access." },
 ];
 
 export default function GalleryPage() {
@@ -58,20 +67,64 @@ export default function GalleryPage() {
               </p>
             </div>
           </div>
+        </Container>
+      </section>
 
-          <div className="reveal mt-14 text-center">
-            <h2 className="text-display text-2xl text-ink">
-              Want your property to be next?
+      <section className="bg-ink py-20 text-white sm:py-28">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow dark>What Shows Up On Site</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl">
+              The equipment behind the photos
             </h2>
-            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact">Get a Free Quote</Button>
-              <Button href={business.phoneHref} variant="ghost">
-                Call {business.phone}
-              </Button>
-            <a href={business.smsHref} className="text-display self-center text-sm text-inherit underline underline-offset-4 opacity-80 hover:opacity-100">
-              or text us
-            </a>
-            </div>
+            <p className="mt-4 text-white/70">
+              A clean result depends on the setup as much as the technique.
+              Here&apos;s what&apos;s actually on the trailer when we pull up.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2">
+            {equipment.map((e, i) => (
+              <div key={e.title} className="reveal border-l-2 border-orange pl-5" data-reveal-delay={i * 70}>
+                <h3 className="text-display text-lg">{e.title}</h3>
+                <p className="mt-2 text-sm text-white/60">{e.detail}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>Want the Full Story on a Job?</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              Read how the work actually gets done
+            </h2>
+            <p className="mt-4 text-ink/70">
+              Photos show the result - these go into the method behind it.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/blog/pressure-washing-vs-soft-washing-whats-the-difference" className="border border-ink/10 bg-white px-5 py-3 text-sm text-ink/80 hover:border-orange hover:text-orange-dark">
+              Pressure Washing vs. Soft Washing →
+            </Link>
+            <Link href="/resources/benefits-of-roof-soft-washing" className="border border-ink/10 bg-white px-5 py-3 text-sm text-ink/80 hover:border-orange hover:text-orange-dark">
+              Benefits of Roof Soft Washing →
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      <section className="grain bg-concrete-dark/60 py-16 sm:py-20">
+        <Container className="text-center">
+          <h2 className="text-display text-2xl text-ink">
+            Want your property to be next?
+          </h2>
+          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button href="/contact">Get a Free Quote</Button>
+            <Button href={business.phoneHref} variant="ghost">
+              Call {business.phone}
+            </Button>
           </div>
         </Container>
       </section>

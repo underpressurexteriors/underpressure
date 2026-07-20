@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
@@ -21,6 +22,12 @@ const clientTypes = [
   { title: "HOAs & Communities", detail: "Recurring maintenance for shared amenities, entrance signage, sidewalks, and common-area buildings." },
   { title: "Property Managers", detail: "Standing service across a portfolio of properties, billed and scheduled on your terms." },
   { title: "Industrial & Warehouse", detail: "Loading docks, warehouse aprons, and equipment pads that need routine degreasing and cleaning." },
+];
+
+const cadence = [
+  { frequency: "Weekly / Bi-weekly", fit: "Storefront glass and high-traffic entryways where daily impressions matter most." },
+  { frequency: "Quarterly", fit: "Parking lots, sidewalks, and common-area hardscape - frequent enough to stay ahead of buildup." },
+  { frequency: "Annually", fit: "Full building exterior wash and roof soft washing for the whole property." },
 ];
 
 export default function CommercialPage() {
@@ -77,6 +84,34 @@ export default function CommercialPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>Recurring Service</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              A cadence built around how the property actually gets used
+            </h2>
+            <p className="mt-4 text-ink/70">
+              Different surfaces need different frequencies. Here&apos;s a
+              realistic starting structure - we&apos;ll adjust it based on your
+              specific property and foot traffic.{" "}
+              <Link href="/blog/why-commercial-properties-need-regular-pressure-washing" className="text-orange-dark underline">
+                See why this matters for the business case
+              </Link>
+              , not just the cosmetics.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {cadence.map((c, i) => (
+              <div key={c.frequency} className="reveal border border-ink/10 bg-white p-6" data-reveal-delay={i * 80}>
+                <h3 className="text-display text-lg text-navy">{c.frequency}</h3>
+                <p className="mt-2 text-sm text-ink/70">{c.fit}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

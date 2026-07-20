@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
@@ -20,6 +21,13 @@ const reasons = [
   { title: "Curb appeal that holds up", detail: "A clean exterior is the fastest, most affordable way to make a home look cared for - whether you're staying or selling." },
   { title: "Protects your investment", detail: "Algae, mildew, and grime aren't just cosmetic - left alone, they degrade siding, shingles, and concrete over time." },
   { title: "Scheduled around you", detail: "Morning, afternoon, or weekend - we work appointments around your schedule, not the other way around." },
+];
+
+const timeline = [
+  { season: "Spring", task: "Gutters, driveway, and siding - get ahead of pollen and the coming humidity.", link: "/blog/spring-cleaning-checklist-for-north-carolina-homeowners" },
+  { season: "Summer", task: "Deck, fence, and patio - the surfaces getting the most use during outdoor season." },
+  { season: "Fall", task: "Roof soft wash before winter, once summer algae growth has had time to show itself.", link: "/resources/benefits-of-roof-soft-washing" },
+  { season: "Winter", task: "Gutter cleanout before storm season and freezing temperatures.", link: "/blog/5-signs-your-gutters-need-to-be-cleaned-before-winter" },
 ];
 
 export default function ResidentialPage() {
@@ -76,6 +84,35 @@ export default function ResidentialPage() {
               ))}
             </div>
             <Button href="/contact" className="mt-8">Get a Free Quote</Button>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>A Home Doesn&apos;t Need Everything At Once</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              A realistic year-round schedule
+            </h2>
+            <p className="mt-4 text-ink/70">
+              Most homes don&apos;t need every service at the same time - spreading
+              maintenance across the year keeps any one visit smaller and
+              keeps ahead of buildup instead of catching up to it.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+            {timeline.map((t, i) => (
+              <div key={t.season} className="reveal bg-white p-6" data-reveal-delay={i * 70}>
+                <span className="text-data text-xs uppercase tracking-wide text-orange-dark">{t.season}</span>
+                <p className="mt-2 text-sm text-ink/70">{t.task}</p>
+                {t.link && (
+                  <Link href={t.link} className="mt-3 inline-block text-xs font-semibold text-orange-dark hover:text-orange">
+                    Read more →
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </Container>
       </section>
