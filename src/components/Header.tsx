@@ -65,6 +65,9 @@ export default function Header() {
           <Link href="/commercial-pressure-washing" className="text-display text-sm text-ink hover:text-orange-dark">
             Commercial
           </Link>
+          <Link href="/real-estate-pressure-washing" className="text-display text-sm text-ink hover:text-orange-dark">
+            Realtors
+          </Link>
 
           <div
             className="group relative"
@@ -166,6 +169,9 @@ export default function Header() {
             </Link>
             <Link href="/commercial-pressure-washing" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Commercial
+            </Link>
+            <Link href="/real-estate-pressure-washing" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+              Realtors &amp; Sellers
             </Link>
             <Link href="/service-areas" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Service Areas

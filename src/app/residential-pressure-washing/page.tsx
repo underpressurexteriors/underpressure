@@ -84,6 +84,13 @@ export default function ResidentialPage() {
               ))}
             </div>
             <Button href="/contact" className="mt-8">Get a Free Quote</Button>
+            <p className="mt-4 text-sm text-ink/60">
+              Selling soon?{" "}
+              <Link href="/real-estate-pressure-washing" className="font-semibold text-orange-dark underline">
+                See our listing-prep page for realtors &amp; sellers
+              </Link>
+              .
+            </p>
           </div>
         </Container>
       </section>

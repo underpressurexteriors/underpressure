@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/residential-pressure-washing",
     "/commercial-pressure-washing",
+    "/real-estate-pressure-washing",
     "/service-areas",
     "/about",
     "/blog",
