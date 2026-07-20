@@ -1,21 +1,26 @@
-import Link from "next/link";
 import { business } from "@/lib/business";
 
 export default function StickyCallBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 flex border-t border-black/10 lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 border-t border-black/10 lg:hidden">
       <a
         href={business.phoneHref}
-        className="text-display flex-1 bg-navy py-3.5 text-center text-sm text-white"
+        className="text-display bg-navy py-3.5 text-center text-xs text-white"
       >
-        Call {business.phone}
+        Call
       </a>
-      <Link
-        href="/contact"
-        className="text-display flex-1 bg-orange py-3.5 text-center text-sm text-white"
+      <a
+        href={business.smsHref}
+        className="text-display bg-orange py-3.5 text-center text-xs text-white"
       >
-        Free Quote
-      </Link>
+        Text
+      </a>
+      <a
+        href={`mailto:${business.email}`}
+        className="text-display bg-ink py-3.5 text-center text-xs text-white"
+      >
+        Email
+      </a>
     </div>
   );
 }

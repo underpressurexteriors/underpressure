@@ -85,6 +85,9 @@ export default async function ServicePage({
             <Button href={business.phoneHref} variant="ghost" className="border-white/30 text-white hover:border-orange">
               Call {business.phone}
             </Button>
+            <a href={business.smsHref} className="text-display self-center text-sm text-inherit underline underline-offset-4 opacity-80 hover:opacity-100">
+              or text us
+            </a>
           </div>
         </Container>
       </section>
@@ -183,6 +186,9 @@ export default async function ServicePage({
             <Button href={business.phoneHref} variant="ghost" className="border-white/40 text-white hover:border-white">
               Call {business.phone}
             </Button>
+            <a href={business.smsHref} className="text-display self-center text-sm text-inherit underline underline-offset-4 opacity-80 hover:opacity-100">
+              or text us
+            </a>
           </div>
         </Container>
       </section>

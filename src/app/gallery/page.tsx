@@ -68,6 +68,9 @@ export default function GalleryPage() {
               <Button href={business.phoneHref} variant="ghost">
                 Call {business.phone}
               </Button>
+            <a href={business.smsHref} className="text-display self-center text-sm text-inherit underline underline-offset-4 opacity-80 hover:opacity-100">
+              or text us
+            </a>
             </div>
           </div>
         </Container>

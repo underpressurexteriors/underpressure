@@ -6,6 +6,7 @@ import { useState } from "react";
 import { business } from "@/lib/business";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { PhoneIcon, TextIcon, MailIcon } from "@/components/Icons";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -104,13 +105,33 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href={business.phoneHref}
-            className="text-data text-sm font-medium text-navy hover:text-orange-dark"
-          >
-            {business.phone}
-          </a>
+        <div className="hidden items-center gap-5 lg:flex">
+          <div className="flex items-center gap-1 border-r border-ink/15 pr-5">
+            <a
+              href={business.phoneHref}
+              aria-label="Call us"
+              title={`Call ${business.phone}`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-navy hover:bg-navy hover:text-white"
+            >
+              <PhoneIcon className="h-4.5 w-4.5" />
+            </a>
+            <a
+              href={business.smsHref}
+              aria-label="Text us"
+              title={`Text ${business.phone}`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-navy hover:bg-navy hover:text-white"
+            >
+              <TextIcon className="h-4.5 w-4.5" />
+            </a>
+            <a
+              href={`mailto:${business.email}`}
+              aria-label="Email us"
+              title={`Email ${business.email}`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-navy hover:bg-navy hover:text-white"
+            >
+              <MailIcon className="h-4.5 w-4.5" />
+            </a>
+          </div>
           <Link
             href="/contact"
             className="text-display rounded-sm bg-orange px-5 py-2.5 text-sm text-white hover:bg-orange-dark"
@@ -152,9 +173,17 @@ export default function Header() {
             <Link href="/contact" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Contact
             </Link>
-            <a href={business.phoneHref} className="mt-2 rounded-sm bg-orange py-3 text-center text-display text-sm text-white">
-              Call {business.phone}
-            </a>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              <a href={business.phoneHref} className="text-display flex flex-col items-center gap-1 rounded-sm bg-navy py-3 text-center text-xs text-white">
+                <PhoneIcon className="h-4 w-4" /> Call
+              </a>
+              <a href={business.smsHref} className="text-display flex flex-col items-center gap-1 rounded-sm bg-orange py-3 text-center text-xs text-white">
+                <TextIcon className="h-4 w-4" /> Text
+              </a>
+              <a href={`mailto:${business.email}`} className="text-display flex flex-col items-center gap-1 rounded-sm bg-ink py-3 text-center text-xs text-white">
+                <MailIcon className="h-4 w-4" /> Email
+              </a>
+            </div>
           </nav>
         </div>
       )}

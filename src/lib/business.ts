@@ -4,6 +4,7 @@ export const business = {
   tagline: "Pressure On. Grime Gone.",
   phone: "(703) 919-6936",
   phoneHref: "tel:+17039196936",
+  smsHref: "sms:+17039196936",
   email: "upxteriors@gmail.com",
   city: "Zebulon",
   state: "NC",
