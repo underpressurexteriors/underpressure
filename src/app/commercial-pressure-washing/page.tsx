@@ -30,6 +30,40 @@ const cadence = [
   { frequency: "Annually", fit: "Full building exterior wash and roof soft washing for the whole property." },
 ];
 
+const operations = [
+  {
+    title: "Off-hours available",
+    detail: "Early morning, evening, or overnight scheduling for properties where daytime work would disrupt customers or staff.",
+  },
+  {
+    title: "On-site coordination",
+    detail: "We work directly with property staff or management to confirm access, timing, and any areas that need to stay clear during the visit.",
+  },
+  {
+    title: "Multi-site scheduling",
+    detail: "For portfolios with more than one location, we can build a rotation that covers every property on a consistent, predictable schedule.",
+  },
+  {
+    title: "Documented completion",
+    detail: "Straightforward confirmation of what was done and when - useful for your own records or reporting up to ownership.",
+  },
+];
+
+const commercialFaqs = [
+  {
+    q: "Can you work outside business hours?",
+    a: "Yes - early morning, evening, and off-hours scheduling is available for properties where daytime cleaning would interfere with customers, tenants, or operations.",
+  },
+  {
+    q: "Do you require a contract for recurring service?",
+    a: "Recurring service can be set up on whatever cadence fits the property - weekly, quarterly, or annually. We're happy to talk through a structure that works for your situation rather than requiring a rigid standard contract.",
+  },
+  {
+    q: "Can you handle multiple properties under one account?",
+    a: "Yes - this is common for property managers and multi-location businesses. See our property management page for more on how portfolio-wide service works.",
+  },
+];
+
 export default function CommercialPage() {
   return (
     <>
@@ -44,6 +78,17 @@ export default function CommercialPage() {
             { "@type": "State", name: "North Carolina" },
             { "@type": "State", name: "Virginia" },
           ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: commercialFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }}
       />
       <PageHero
@@ -127,6 +172,25 @@ export default function CommercialPage() {
         </Container>
       </section>
 
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>How We Operate</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              Built to fit around a running business
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {operations.map((o, i) => (
+              <div key={o.title} className="reveal border-l-2 border-orange pl-5" data-reveal-delay={i * 70}>
+                <h3 className="text-display text-lg text-navy">{o.title}</h3>
+                <p className="mt-2 text-sm text-ink/70">{o.detail}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-concrete-dark/60 py-16 sm:py-24">
         <Container>
           <div className="reveal max-w-2xl">
@@ -138,6 +202,26 @@ export default function CommercialPage() {
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {commercialServices.map((s, i) => (
               <ServiceCard key={s.slug} service={s} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <div className="reveal">
+            <Eyebrow>Commercial FAQ</Eyebrow>
+            <h2 className="text-display mt-3 text-2xl text-ink">Common questions</h2>
+          </div>
+          <div className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
+            {commercialFaqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-ink">
+                  <span className="text-display text-base">{f.q}</span>
+                  <span className="text-orange-dark shrink-0 text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-ink/70">{f.a}</p>
+              </details>
             ))}
           </div>
         </Container>

@@ -27,6 +27,7 @@ export const services: Service[] = [
       "Concrete looks gray until you clean it, then you find out it was actually white. Surface cleaning targets driveways, sidewalks, walkways, and any flat hardscape where algae, mildew, oil residue, and general grime build up over time.",
       "We use a rotary surface cleaner rather than a handheld wand for flat work. The enclosed spinning head keeps water contained, cleans in consistent overlapping circles, and eliminates the striping or 'zebra' pattern that comes from uneven wand technique. That means a cleaner result and a faster job.",
       "Water pressure and dwell time are adjusted per surface. Stamped concrete, exposed aggregate, and standard broom-finish concrete all respond differently, and we set up accordingly so the finish stays intact while the buildup comes off.",
+    "Surface cleaning is usually the highest-impact single service on a property - concrete covers more visible square footage than almost anything else outside, and a driveway that's noticeably dirty tends to read as \"the whole house needs work\" even when nothing else does. It's also the service most homeowners underestimate how much it changes a property's overall look.",
     ],
     goodFor: [
       "Driveways and parking pads",
@@ -54,6 +55,10 @@ export const services: Service[] = [
         q: "Can you remove oil stains completely?",
         a: "Fresh oil stains usually lift well with pre-treatment and hot water. Older, deeply set stains may lighten significantly but not disappear entirely - we'll give you an honest expectation before starting.",
       },
+    {
+        q: "What affects the cost of a surface cleaning job?",
+        a: "Total square footage is the biggest factor, followed by how much detail work is needed around edges, garden beds, and obstacles. A driveway with a lot of embedded oil staining or heavy algae growth also takes longer than one with light surface dirt.",
+      },
     ],
   },
   {
@@ -70,6 +75,7 @@ export const services: Service[] = [
       "Soft washing is the correct method for cleaning the exterior of a home. Instead of blasting siding with high pressure, which can force water behind panels, strip paint, or crack stucco, we apply a low-pressure, controlled cleaning solution that breaks down algae, mildew, and dirt at the surface, then rinse it away gently.",
       "This is the method that actually kills the black streaks and green algae you see on siding, not just knocks the visible layer off. Because the solution addresses the organic growth itself, results also last considerably longer than a straight pressure rinse.",
       "We work around windows, outlets, light fixtures, and landscaping, and pre-wet sensitive plants before application. Vinyl, fiber cement (Hardie board), brick, stucco, and painted wood surfaces are all soft-washed with formulas suited to that material.",
+    "How long a soft wash job takes depends more on square footage and the number of stories than on how dirty the siding looks - a two-story home with full second-floor algae growth isn't necessarily a longer job than a single-story home with the same growth, since our equipment reaches both the same way. What does add time is trim detail: homes with a lot of shutters, dormers, or architectural features simply have more edges to work.",
     ],
     goodFor: [
       "Vinyl, wood, and fiber cement siding",
@@ -97,6 +103,10 @@ export const services: Service[] = [
         q: "How long does a house wash last?",
         a: "Because soft washing kills algae and mildew at the root instead of just rinsing the surface, most homes stay clean for 12-24 months depending on shade, humidity, and tree cover.",
       },
+    {
+        q: "What affects the cost of a house wash?",
+        a: "Square footage and number of stories are the main factors, along with how much trim, shutters, and architectural detail the home has to work around. A heavily algae-streaked home doesn't necessarily cost more than a lightly dirty one of the same size - soft washing takes roughly the same time either way.",
+      },
     ],
   },
   {
@@ -113,6 +123,7 @@ export const services: Service[] = [
       "The dark streaking that shows up on asphalt shingle roofs is typically a algae called Gloeocapsa magma, which feeds on the limestone filler in shingles. It spreads over time and, left alone, can shorten shingle life and quietly increase attic temperatures on the affected side of the roof.",
       "Roof washing is always a soft-wash service, never a high-pressure job. We apply a roof-safe cleaning solution that kills the algae and moss at the root, let it dwell, and rinse from the top down at low pressure so granules stay put and shingles stay sealed.",
       "This same low-pressure approach is used on metal roofing, tile, and architectural shingles, with the solution and dwell time adjusted for the roofing material.",
+    "Roof washing is almost always scheduled separately from a house soft wash, even though both use the same low-pressure method - roof access, pitch, and safety setup are different enough from ground-level siding work that they're planned as their own visit rather than an add-on squeezed into the same time slot.",
     ],
     goodFor: [
       "Asphalt shingle roofs with black streaking",
@@ -139,6 +150,10 @@ export const services: Service[] = [
         q: "How long until the streaks come back?",
         a: "Soft washing kills the algae colony rather than just rinsing the surface, so most roofs stay clean for 2-4 years depending on shade and moisture exposure.",
       },
+    {
+        q: "What affects the cost of a roof soft wash?",
+        a: "Roof square footage, pitch, and how many stories tall the house is all factor in - steeper or higher roofs take more time and equipment to access safely. The amount of algae or moss present has less impact on price than the roof's size and accessibility.",
+      },
     ],
   },
   {
@@ -155,6 +170,7 @@ export const services: Service[] = [
       "Fences and decks take a beating from weather, foot traffic, and standing moisture, which shows up as gray, weathered wood, greenish algae in shaded corners, and grime packed into the grain. Cleaning brings the material's actual color back and gives a clean, prepped surface if you're staining or sealing afterward.",
       "Wood decking gets a different pressure and nozzle setup than vinyl or composite, since wood grain can be damaged by too much pressure held too close, while composite and vinyl can typically handle a more direct approach.",
       "For decks that will be stained or sealed after cleaning, we time the job so the wood has proper drying time before any coating goes on.",
+    "Timing matters more for this service than most others on the list - a deck or fence cleaned in full sun on a hot afternoon dries faster than one cleaned in shade, which affects how soon it's ready for stain or sealant. We factor weather and sun exposure into scheduling when a coating is going on afterward.",
     ],
     goodFor: [
       "Wood, vinyl, and composite fencing",
@@ -181,6 +197,10 @@ export const services: Service[] = [
         q: "Do you clean chain-link or metal fencing too?",
         a: "Yes, metal and chain-link fencing can be cleaned as part of a fence package alongside wood, vinyl, or composite sections.",
       },
+    {
+        q: "What affects the cost of fence or deck cleaning?",
+        a: "Linear footage for fencing, and square footage for decking, are the main factors. Heavily weathered wood that needs more dwell time for treatment, or multi-level decks with more edges and railings, typically take longer than a simple flat deck of the same size.",
+      },
     ],
   },
   {
@@ -197,6 +217,7 @@ export const services: Service[] = [
       "Between grill grease, spilled drinks, tree debris, and shade-loving algae, patios accumulate grime faster than almost any other hardscape around the house. Patio cleaning uses surface cleaning equipment for open areas and detail wand work around furniture, planters, and edges.",
       "Natural stone, tile, and stamped or stained concrete each need their own pressure setting to avoid stripping sealant or damaging grout lines, so we identify the material before setting up equipment.",
       "This service pairs well with fence and deck cleaning or a full exterior house wash for properties getting ready to host events or list for sale.",
+    "Patios attached to a pool or hot tub get a slightly different treatment than a standalone patio, since they deal with near-constant moisture and chemical splash-out rather than just rain and shade - algae reestablishes faster in that environment, which is worth knowing if you're deciding how often to schedule cleaning.",
     ],
     goodFor: [
       "Concrete, stamped concrete, and stained patios",
@@ -219,6 +240,10 @@ export const services: Service[] = [
         q: "Can you get grill grease stains off concrete?",
         a: "Most grease staining lightens substantially with pre-treatment and hot water cleaning. Very old, deeply set grease may not come out 100%, and we'll set honest expectations on-site.",
       },
+    {
+        q: "What affects the cost of patio cleaning?",
+        a: "Square footage and material (concrete versus natural stone or tile) are the main factors. Patios with a lot of furniture, planters, or built-in features that need to be worked around take more time than a fully open slab.",
+      },
     ],
   },
   {
@@ -234,6 +259,7 @@ export const services: Service[] = [
     overview: [
       "Trash and recycling bins sit in the sun holding bacteria, mold, maggots, and the source of most yard odor complaints - and most people never clean them because it's an unpleasant job. We handle it curbside with dedicated bin-cleaning equipment that uses hot, high-pressure water and a sanitizing rinse, with wastewater contained rather than run into your yard or storm drains.",
       "Both residential single-bin service and recurring routes, and commercial dumpster/multi-bin accounts for HOAs, apartment complexes, and businesses, are available.",
+    "The smell most people associate with \"trash day\" is usually coming from residue built up inside the bin itself, not the current week's trash - which is why a bin that gets emptied weekly can still smell bad even when it's empty. Cleaning the interior surface is what actually addresses that, not just rinsing the outside.",
     ],
     goodFor: [
       "Residential trash and recycling bins",
@@ -256,6 +282,10 @@ export const services: Service[] = [
         q: "Is this available as a recurring service?",
         a: "Yes - monthly and quarterly recurring routes are available for residential customers, along with ongoing commercial bin programs.",
       },
+    {
+        q: "How is trash can cleaning priced?",
+        a: "Typically per bin, with a lower rate for recurring routes than one-time cleanings. Commercial dumpster and multi-bin accounts are quoted based on the number and size of containers.",
+      },
     ],
   },
   {
@@ -271,6 +301,7 @@ export const services: Service[] = [
     overview: [
       "Pool decks and paver patios deal with constant moisture, sunscreen residue, and splash-out chemicals, which accelerates algae growth and can cause efflorescence (that chalky white buildup) on pavers and concrete. Cleaning is calibrated to lift that buildup without blasting sand out of paver joints or damaging travertine's softer surface.",
       "For paver surfaces, we offer polymeric sand re-application after cleaning to lock joints back in and discourage weed growth, plus sealing to protect against future staining and make the next cleaning easier.",
+    "Efflorescence - the chalky white residue that shows up on pavers and concrete near pools - isn't dirt, it's mineral deposits leaching out of the material itself, usually from consistent moisture exposure. It responds to a different cleaning approach than algae or organic staining, which is part of why pool deck cleaning gets treated as its own specialty rather than folded into general patio cleaning.",
     ],
     goodFor: [
       "Paver patios and pool decks",
@@ -293,6 +324,10 @@ export const services: Service[] = [
         q: "Do you clean around an active pool?",
         a: "Yes, we work around pool equipment and water carefully and can coordinate timing so cleaning doesn't interfere with pool use longer than necessary.",
       },
+    {
+        q: "What affects the cost of paver or pool deck cleaning?",
+        a: "Square footage is the main factor, along with whether joint sanding or sealing is added to the job. Heavy efflorescence or algae buildup around a pool can add time compared to a lightly soiled surface.",
+      },
     ],
   },
   {
@@ -308,6 +343,7 @@ export const services: Service[] = [
     overview: [
       "Clogged gutters are one of the most common, most avoidable causes of fascia rot, foundation moisture issues, and basement seepage. We clear leaves, seed pods, and debris from the gutter interior so water routes through downspouts the way it's supposed to, rather than sheeting over the side.",
       "Exterior gutter and fascia brightening is available as an add-on to address the black streaking (oxidation and dirt buildup) that shows up on the outside of gutters over time, giving the roofline a finished look to match a house wash.",
+    "Gutters near large oak or pine trees typically need cleaning more than the twice-a-year standard - pine needles in particular pack into corners and downspout openings differently than broad leaves do, and can clog a system faster than the calendar alone would suggest.",
     ],
     goodFor: [
       "Single-story and multi-story homes",
@@ -330,6 +366,10 @@ export const services: Service[] = [
         q: "Do you repair gutters too?",
         a: "Our focus is cleaning, but we'll flag any loose brackets, separated seams, or damage we spot during the job so you know before it becomes a bigger problem.",
       },
+    {
+        q: "What affects the cost of gutter cleaning?",
+        a: "Linear footage of gutter and the number of stories are the main factors - second-story and higher gutters require more setup than single-story homes. Heavy debris from nearby trees can add time compared to a lightly loaded system.",
+      },
     ],
   },
   {
@@ -346,6 +386,7 @@ export const services: Service[] = [
       "Window cleaning is often the last step that ties a full exterior cleaning together - it's hard to notice freshly washed siding when the windows are still covered in hard water spots, pollen film, and streaks. We clean exterior glass, screens, tracks, and sills, with interior cleaning available on request for both homes and businesses.",
       "Storefronts and commercial glass fronts are serviced on a scheduled or one-time basis, keeping street-facing glass clear and presentable.",
       "Hard water spots and mineral deposits from sprinklers are one of the more common issues we see on residential windows in this region - plain water or a standard glass cleaner won't touch them, so we use a solution formulated to actually break down mineral buildup rather than just smearing it around.",
+    "The best time to schedule window cleaning is usually right after siding gets soft-washed - rinse water and overspray from a house wash can leave spotting on glass, so doing windows last means they don't need a second pass to undo residue from the wash itself.",
     ],
     goodFor: [
       "Residential exterior and interior glass",
@@ -372,6 +413,10 @@ export const services: Service[] = [
       {
         q: "Can you remove hard water spots from sprinklers?",
         a: "In most cases, yes - mineral deposits respond well to the right cleaning solution and technique. Deeply etched glass (spots that have been baked in by the sun over years) may lighten significantly without fully disappearing, and we'll be upfront if a window falls into that category.",
+      },
+    {
+        q: "What affects the cost of window cleaning?",
+        a: "Number of panes and whether interior cleaning is included are the main factors. Storefronts and larger commercial glass fronts are typically quoted based on total glass square footage and access difficulty.",
       },
     ],
   },

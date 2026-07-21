@@ -30,6 +30,40 @@ const timeline = [
   { season: "Winter", task: "Gutter cleanout before storm season and freezing temperatures.", link: "/blog/5-signs-your-gutters-need-to-be-cleaned-before-winter" },
 ];
 
+const scenarios = [
+  {
+    title: "Just moved in",
+    detail: "The previous owner's maintenance schedule isn't yours. A move-in wash gets the exterior to a baseline you know, rather than inheriting years of unknown history.",
+  },
+  {
+    title: "Getting ready to sell",
+    detail: "Listing photos and showings both hinge on first impressions. See our dedicated page for realtors and sellers for the full listing-prep breakdown.",
+  },
+  {
+    title: "Annual upkeep",
+    detail: "The most cost-effective approach - regular cleaning on a schedule prevents the kind of years-deep buildup that takes longer (and costs more) to reverse.",
+  },
+  {
+    title: "It's been a while",
+    detail: "No judgment - exteriors get put off. A heavier first cleaning gets a neglected property back to a normal maintenance rhythm.",
+  },
+];
+
+const residentialFaqs = [
+  {
+    q: "How long does a full residential exterior job take?",
+    a: "It depends on scope - a driveway alone might take under an hour, while a full-property job (house wash, driveway, walkways, gutters) typically takes most of a day for an average-sized home.",
+  },
+  {
+    q: "Do I need to be home?",
+    a: "Not necessarily, as long as we have access to the areas being cleaned. Many homeowners aren't home during exterior-only visits.",
+  },
+  {
+    q: "Will you move my outdoor furniture?",
+    a: "We're happy to work around furniture, but a quicker and more thorough clean happens when driveways, patios, and decks are cleared beforehand. We'll let you know before we start if anything's in the way.",
+  },
+];
+
 export default function ResidentialPage() {
   return (
     <>
@@ -44,6 +78,17 @@ export default function ResidentialPage() {
             { "@type": "State", name: "North Carolina" },
             { "@type": "State", name: "Virginia" },
           ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: residentialFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }}
       />
       <PageHero
@@ -124,6 +169,25 @@ export default function ResidentialPage() {
         </Container>
       </section>
 
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>Sound Familiar?</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              Most homeowners call us for one of four reasons
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {scenarios.map((s, i) => (
+              <div key={s.title} className="reveal border border-ink/10 bg-white p-6" data-reveal-delay={i * 70}>
+                <h3 className="text-display text-lg text-navy">{s.title}</h3>
+                <p className="mt-2 text-sm text-ink/70">{s.detail}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-concrete-dark/60 py-16 sm:py-24">
         <Container>
           <div className="reveal max-w-2xl">
@@ -135,6 +199,26 @@ export default function ResidentialPage() {
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {residentialServices.map((s, i) => (
               <ServiceCard key={s.slug} service={s} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <div className="reveal">
+            <Eyebrow>Residential FAQ</Eyebrow>
+            <h2 className="text-display mt-3 text-2xl text-ink">Common questions</h2>
+          </div>
+          <div className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
+            {residentialFaqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-ink">
+                  <span className="text-display text-base">{f.q}</span>
+                  <span className="text-orange-dark shrink-0 text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-ink/70">{f.a}</p>
+              </details>
             ))}
           </div>
         </Container>
