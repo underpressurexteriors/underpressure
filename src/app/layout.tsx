@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/oswald/600.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/oswald/latin-600.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/ibm-plex-mono/latin-400.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
