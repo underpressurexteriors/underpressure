@@ -70,6 +70,59 @@ export default function GalleryPage() {
         </Container>
       </section>
 
+      <section className="bg-concrete-dark/60 py-16 sm:py-24">
+        <Container>
+          <div className="reveal max-w-2xl">
+            <Eyebrow>Behind the Photos</Eyebrow>
+            <h2 className="text-display mt-3 text-3xl text-ink sm:text-4xl">
+              What a job day actually looks like
+            </h2>
+            <p className="mt-4 text-ink/70">
+              A finished photo doesn&apos;t show the setup, the assessment, or
+              the cleanup - here&apos;s the full sequence, start to finish.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="reveal" data-reveal-delay="0">
+              <span className="text-data text-sm text-orange-dark">01</span>
+              <h3 className="text-display mt-3 text-lg text-ink">Arrive &amp; assess</h3>
+              <p className="mt-2 text-sm text-ink/70">
+                Walk the property, confirm what&apos;s being cleaned, and check
+                for anything - loose gutters, cracked pavers, sensitive
+                landscaping - worth working around deliberately.
+              </p>
+            </div>
+            <div className="reveal" data-reveal-delay="80">
+              <span className="text-data text-sm text-orange-dark">02</span>
+              <h3 className="text-display mt-3 text-lg text-ink">Set up the rig</h3>
+              <p className="mt-2 text-sm text-ink/70">
+                Trailer positioned, hoses run, and the right attachment -
+                surface cleaner, soft-wash injector, or extension wand -
+                staged for the surface at hand.
+              </p>
+            </div>
+            <div className="reveal" data-reveal-delay="160">
+              <span className="text-data text-sm text-orange-dark">03</span>
+              <h3 className="text-display mt-3 text-lg text-ink">Clean, section by section</h3>
+              <p className="mt-2 text-sm text-ink/70">
+                Systematic passes rather than random spot-cleaning, so
+                nothing gets missed and nothing gets double-billed for
+                rework later.
+              </p>
+            </div>
+            <div className="reveal" data-reveal-delay="240">
+              <span className="text-data text-sm text-orange-dark">04</span>
+              <h3 className="text-display mt-3 text-lg text-ink">Final walkthrough</h3>
+              <p className="mt-2 text-sm text-ink/70">
+                Before we call it done, we walk the result with you - this
+                is when the &quot;before and after&quot; actually gets seen in
+                person, not just in a photo.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-ink py-20 text-white sm:py-28">
         <Container>
           <div className="reveal max-w-2xl">

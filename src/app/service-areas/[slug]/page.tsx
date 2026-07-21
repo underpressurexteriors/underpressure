@@ -42,6 +42,21 @@ export default async function LocationPage({
     .filter((l) => l.slug !== loc.slug && loc.nearby.some((n) => n.startsWith(l.city)))
     .slice(0, 3);
 
+  const localFaqs = [
+    {
+      q: `How quickly can you get to a job in ${loc.city}?`,
+      a: `${loc.city} is a regular stop on our route${loc.state === "NC" ? " through the Triangle and eastern NC" : " along the Southside Virginia corridor"}, so scheduling is usually straightforward. Reach out and we'll give you a realistic timeline based on current bookings.`,
+    },
+    {
+      q: `Do you also serve towns near ${loc.city}?`,
+      a: `Yes - along with ${loc.city}, we regularly cover ${loc.nearby.join(", ")} and the surrounding area. If you're near ${loc.city} but not sure we reach your exact address, just ask.`,
+    },
+    {
+      q: `Do I need to be home for a job in ${loc.city}?`,
+      a: `Not necessarily, as long as we have access to whatever's being cleaned. Many ${loc.city} customers aren't home for exterior-only jobs like driveway or roof cleaning.`,
+    },
+  ];
+
   return (
     <>
       <JsonLd
@@ -56,6 +71,17 @@ export default async function LocationPage({
             name: loc.city,
             containedInPlace: { "@type": "AdministrativeArea", name: loc.stateFull },
           },
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: localFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }}
       />
       <section className="grain bg-ink-soft py-16 text-white sm:py-20">
@@ -108,6 +134,7 @@ export default async function LocationPage({
               approach, and give you a straightforward price before any work
               begins.
             </p>
+            <p>{loc.regionalNote}</p>
           </div>
 
           <aside className="space-y-8">
@@ -158,7 +185,27 @@ export default async function LocationPage({
           </aside>
         </Container>
 
-        <Container className="mt-8">
+        <Container className="mt-14 max-w-3xl">
+          <div className="reveal">
+            <Eyebrow>{loc.city} Questions</Eyebrow>
+            <h2 className="text-display mt-3 text-2xl text-ink">
+              Local questions, answered
+            </h2>
+          </div>
+          <div className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
+            {localFaqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-ink">
+                  <span className="text-display text-base">{f.q}</span>
+                  <span className="text-orange-dark shrink-0 text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-ink/70">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </Container>
+
+        <Container className="mt-14">
           <div className="reveal">
             <Eyebrow>Services available in {loc.city}</Eyebrow>
           </div>

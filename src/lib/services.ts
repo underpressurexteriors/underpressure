@@ -345,12 +345,14 @@ export const services: Service[] = [
     overview: [
       "Window cleaning is often the last step that ties a full exterior cleaning together - it's hard to notice freshly washed siding when the windows are still covered in hard water spots, pollen film, and streaks. We clean exterior glass, screens, tracks, and sills, with interior cleaning available on request for both homes and businesses.",
       "Storefronts and commercial glass fronts are serviced on a scheduled or one-time basis, keeping street-facing glass clear and presentable.",
+      "Hard water spots and mineral deposits from sprinklers are one of the more common issues we see on residential windows in this region - plain water or a standard glass cleaner won't touch them, so we use a solution formulated to actually break down mineral buildup rather than just smearing it around.",
     ],
     goodFor: [
       "Residential exterior and interior glass",
       "Screens, tracks, and sills",
       "Storefront and office glass fronts (commercial)",
       "Post-construction window cleanup",
+      "Hard water and sprinkler mineral spot removal",
     ],
     process: [
       { title: "Screens & tracks", detail: "Screens are removed and cleaned, and tracks are cleared of dirt and debris buildup." },
@@ -366,6 +368,10 @@ export const services: Service[] = [
       {
         q: "How often do storefronts typically get cleaned?",
         a: "Many commercial clients schedule window cleaning weekly, bi-weekly, or monthly depending on street-front visibility and foot traffic. One-time cleanings are also available.",
+      },
+      {
+        q: "Can you remove hard water spots from sprinklers?",
+        a: "In most cases, yes - mineral deposits respond well to the right cleaning solution and technique. Deeply etched glass (spots that have been baked in by the sun over years) may lighten significantly without fully disappearing, and we'll be upfront if a window falls into that category.",
       },
     ],
   },
