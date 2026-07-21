@@ -41,6 +41,25 @@ const timeline = [
   { step: "Through closing", detail: "A clean exterior keeps making a good impression at every showing and inspection between listing and closing." },
 ];
 
+const realEstateFaqs = [
+  {
+    q: "Should exterior cleaning happen before or after staging?",
+    a: "Before, generally - staging is mostly interior-focused, and exterior cleaning doesn't interfere with it. Booking the exterior work early in the listing-prep timeline means it's done and out of the way before the photographer and stager show up.",
+  },
+  {
+    q: "Can you clean a vacant property?",
+    a: "Yes - vacant homes are common in listing-prep work. As long as we have access to the exterior and any water shutoffs are handled, an empty house is no different to clean than an occupied one.",
+  },
+  {
+    q: "Does this help with the home inspection too?",
+    a: "Indirectly - a clean exterior doesn't change what an inspector finds, but it does make it easier to actually see the condition of siding, roofing, and gutters, which can help avoid a buyer's inspector flagging something that's really just surface grime.",
+  },
+  {
+    q: "How fast can you turn around a listing that's going live this week?",
+    a: "Reach out as early as possible - we'll always try to accommodate a tight listing timeline, but availability depends on current bookings, especially during spring and summer listing season.",
+  },
+];
+
 export default function RealEstatePage() {
   return (
     <>
@@ -55,6 +74,17 @@ export default function RealEstatePage() {
             { "@type": "State", name: "North Carolina" },
             { "@type": "State", name: "Virginia" },
           ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: realEstateFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }}
       />
       <PageHero
@@ -196,6 +226,26 @@ export default function RealEstatePage() {
             <Button href="/residential-pressure-washing" variant="ghost" className="mt-8">
               See Residential Services
             </Button>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <div className="reveal">
+            <Eyebrow>Listing Prep FAQ</Eyebrow>
+            <h2 className="text-display mt-3 text-2xl text-ink">Common questions</h2>
+          </div>
+          <div className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
+            {realEstateFaqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-ink">
+                  <span className="text-display text-base">{f.q}</span>
+                  <span className="text-orange-dark shrink-0 text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-ink/70">{f.a}</p>
+              </details>
+            ))}
           </div>
         </Container>
       </section>

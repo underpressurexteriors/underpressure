@@ -71,6 +71,25 @@ const segments = [
   },
 ];
 
+const pmFaqs = [
+  {
+    q: "Do you provide a certificate of insurance for vendor files?",
+    a: "Yes - we're licensed and insured and can provide documentation for your vendor onboarding process before the first job is scheduled.",
+  },
+  {
+    q: "How does billing work across multiple properties?",
+    a: "Per-property, consolidated across a portfolio, or however your accounting structure needs it - we'll set billing up to match your process rather than asking you to adapt to ours.",
+  },
+  {
+    q: "Can you coordinate with our on-site staff or leasing office?",
+    a: "Yes - for multifamily and HOA properties especially, we're glad to coordinate timing and access directly with on-site staff so nothing falls on residents or board members to manage.",
+  },
+  {
+    q: "What if a property needs something outside the regular schedule?",
+    a: "You'll have a direct point of contact rather than a call center - reach out and we'll fit it in around the standing route as quickly as scheduling allows.",
+  },
+];
+
 export default function PropertyManagementPage() {
   return (
     <>
@@ -85,6 +104,17 @@ export default function PropertyManagementPage() {
             { "@type": "State", name: "North Carolina" },
             { "@type": "State", name: "Virginia" },
           ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: pmFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }}
       />
       <PageHero
@@ -205,6 +235,26 @@ export default function PropertyManagementPage() {
             </Link>
             .
           </p>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <div className="reveal">
+            <Eyebrow>Vendor FAQ</Eyebrow>
+            <h2 className="text-display mt-3 text-2xl text-ink">Common questions</h2>
+          </div>
+          <div className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
+            {pmFaqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-ink">
+                  <span className="text-display text-base">{f.q}</span>
+                  <span className="text-orange-dark shrink-0 text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-ink/70">{f.a}</p>
+              </details>
+            ))}
+          </div>
         </Container>
       </section>
 
