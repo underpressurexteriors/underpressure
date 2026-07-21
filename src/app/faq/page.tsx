@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description:
     "Answers to common questions about pressure washing, soft washing, pricing, scheduling, safety, and service areas with Under Pressure Xteriors.",
   alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "Frequently Asked Questions",
+    description: "Answers to common questions about pressure washing, soft washing, pricing, scheduling, safety, and service areas with Under Pressure Xteriors.",
+    url: `${business.url}/faq`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frequently Asked Questions",
+    description: "Answers to common questions about pressure washing, soft washing, pricing, scheduling, safety, and service areas with Under Pressure Xteriors.",
+  },
 };
 
 const faqGroups = [

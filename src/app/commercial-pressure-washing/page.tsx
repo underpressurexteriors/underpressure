@@ -15,6 +15,17 @@ export const metadata: Metadata = {
   description:
     "Commercial pressure washing for businesses, HOAs, and property managers in North Carolina and Virginia. Storefront washing, parking lot cleaning, dumpster pads, and recurring maintenance programs.",
   alternates: { canonical: "/commercial-pressure-washing" },
+  openGraph: {
+    title: "Commercial Pressure Washing",
+    description: "Commercial pressure washing for businesses, HOAs, and property managers in North Carolina and Virginia. Storefront washing, parking lot cleaning, dumpster pads, and recurring maintenance programs.",
+    url: `${business.url}/commercial-pressure-washing`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Pressure Washing",
+    description: "Commercial pressure washing for businesses, HOAs, and property managers in North Carolina and Virginia. Storefront washing, parking lot cleaning, dumpster pads, and recurring maintenance programs.",
+  },
 };
 
 const clientTypes = [

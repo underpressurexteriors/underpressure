@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   description:
     "Reach Under Pressure Xteriors instantly - call, text, or email for a free pressure washing quote. Serving North Carolina and Virginia.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us | Call, Text, or Email",
+    description: "Reach Under Pressure Xteriors instantly - call, text, or email for a free pressure washing quote. Serving North Carolina and Virginia.",
+    url: `${business.url}/contact`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Call, Text, or Email",
+    description: "Reach Under Pressure Xteriors instantly - call, text, or email for a free pressure washing quote. Serving North Carolina and Virginia.",
+  },
 };
 
 const actions = [

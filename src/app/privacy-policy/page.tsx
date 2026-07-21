@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy policy for ${business.name}.`,
   alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy",
+    description: `Privacy policy for ${business.name}.`,
+    url: `${business.url}/privacy-policy`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy",
+    description: `Privacy policy for ${business.name}.`,
+  },
   robots: { index: false, follow: true },
 };
 

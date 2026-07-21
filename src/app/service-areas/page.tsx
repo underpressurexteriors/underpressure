@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   description:
     "Under Pressure Xteriors provides pressure washing across North Carolina and Virginia, based in Zebulon, NC. See the full list of towns and cities we serve.",
   alternates: { canonical: "/service-areas" },
+  openGraph: {
+    title: "Service Areas | North Carolina & Virginia",
+    description: "Under Pressure Xteriors provides pressure washing across North Carolina and Virginia, based in Zebulon, NC. See the full list of towns and cities we serve.",
+    url: `${business.url}/service-areas`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Service Areas | North Carolina & Virginia",
+    description: "Under Pressure Xteriors provides pressure washing across North Carolina and Virginia, based in Zebulon, NC. See the full list of towns and cities we serve.",
+  },
 };
 
 export default function ServiceAreasPage() {

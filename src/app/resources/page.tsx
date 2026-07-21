@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { business } from "@/lib/business";
 import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
@@ -9,6 +10,17 @@ export const metadata: Metadata = {
   description:
     "In-depth guides on exterior cleaning best practices - why not to use bleach on wood, soft washing vs pressure washing, roof care, and more.",
   alternates: { canonical: "/resources" },
+  openGraph: {
+    title: "Resources | Exterior Cleaning Guides",
+    description: "In-depth guides on exterior cleaning best practices - why not to use bleach on wood, soft washing vs pressure washing, roof care, and more.",
+    url: `${business.url}/resources`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resources | Exterior Cleaning Guides",
+    description: "In-depth guides on exterior cleaning best practices - why not to use bleach on wood, soft washing vs pressure washing, roof care, and more.",
+  },
 };
 
 export default function ResourcesPage() {

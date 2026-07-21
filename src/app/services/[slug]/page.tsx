@@ -19,10 +19,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
+  const title = `${service.name} in ${business.city}, NC & VA`;
   return {
-    title: `${service.name} in ${business.city}, NC & VA`,
+    title,
     description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      title,
+      description: service.metaDescription,
+      url: `${business.url}/services/${service.slug}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: service.metaDescription,
+    },
   };
 }
 

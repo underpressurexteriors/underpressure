@@ -151,7 +151,7 @@ export default function Header() {
         </div>
 
         <button
-          className="flex h-10 w-10 items-center justify-center lg:hidden"
+          className="flex h-11 w-11 items-center justify-center lg:hidden"
           aria-label="Toggle menu"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
@@ -160,36 +160,36 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-ink/10 bg-concrete px-5 py-4 lg:hidden">
+        <div className="max-h-[calc(100vh-64px)] overflow-y-auto border-t border-ink/10 bg-concrete px-5 py-4 lg:hidden">
           <nav className="flex flex-col gap-1">
-            <Link href="/services" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/services" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Services
             </Link>
-            <Link href="/residential-pressure-washing" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/residential-pressure-washing" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Residential
             </Link>
-            <Link href="/commercial-pressure-washing" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/commercial-pressure-washing" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Commercial
             </Link>
-            <Link href="/real-estate-pressure-washing" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/real-estate-pressure-washing" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Realtors &amp; Sellers
             </Link>
-            <Link href="/service-areas" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/service-areas" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Service Areas
             </Link>
-            <Link href="/about" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/about" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               About
             </Link>
-            <Link href="/blog" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/blog" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Blog
             </Link>
-            <Link href="/resources" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/resources" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Resources
             </Link>
-            <Link href="/gallery" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/gallery" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Gallery
             </Link>
-            <Link href="/contact" className="py-2 text-display text-sm" onClick={() => setMobileOpen(false)}>
+            <Link href="/contact" className="py-3 text-display text-sm" onClick={() => setMobileOpen(false)}>
               Contact
             </Link>
             <div className="mt-2 grid grid-cols-3 gap-2">

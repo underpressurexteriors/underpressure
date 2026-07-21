@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   description:
     "Full list of pressure washing and exterior cleaning services from Under Pressure Xteriors: surface cleaning, soft washing, roof washing, gutter cleaning, window cleaning, and more.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Pressure Washing Services",
+    description: "Full list of pressure washing and exterior cleaning services from Under Pressure Xteriors: surface cleaning, soft washing, roof washing, gutter cleaning, window cleaning, and more.",
+    url: `${business.url}/services`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pressure Washing Services",
+    description: "Full list of pressure washing and exterior cleaning services from Under Pressure Xteriors: surface cleaning, soft washing, roof washing, gutter cleaning, window cleaning, and more.",
+  },
 };
 
 const methods = [

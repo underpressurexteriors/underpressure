@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Terms of service for ${business.name}.`,
   alternates: { canonical: "/terms-of-service" },
+  openGraph: {
+    title: "Terms of Service",
+    description: `Terms of service for ${business.name}.`,
+    url: `${business.url}/terms-of-service`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service",
+    description: `Terms of service for ${business.name}.`,
+  },
   robots: { index: false, follow: true },
 };
 

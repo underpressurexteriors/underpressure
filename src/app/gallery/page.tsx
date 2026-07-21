@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   description:
     "See recent pressure washing and exterior cleaning work from Under Pressure Xteriors in and around Zebulon, NC.",
   alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "Gallery | Our Work",
+    description: "See recent pressure washing and exterior cleaning work from Under Pressure Xteriors in and around Zebulon, NC.",
+    url: `${business.url}/gallery`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gallery | Our Work",
+    description: "See recent pressure washing and exterior cleaning work from Under Pressure Xteriors in and around Zebulon, NC.",
+  },
 };
 
 const photos = [

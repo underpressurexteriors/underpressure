@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description:
     "Meet the team behind Under Pressure Xteriors, a licensed and insured pressure washing company based in Zebulon, NC serving North Carolina and Virginia.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us",
+    description: "Meet the team behind Under Pressure Xteriors, a licensed and insured pressure washing company based in Zebulon, NC serving North Carolina and Virginia.",
+    url: `${business.url}/about`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us",
+    description: "Meet the team behind Under Pressure Xteriors, a licensed and insured pressure washing company based in Zebulon, NC serving North Carolina and Virginia.",
+  },
 };
 
 const values = [

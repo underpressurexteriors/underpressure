@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   description:
     "Pressure washing for HOAs, apartment communities, and commercial portfolios in North Carolina and Virginia. One vendor, consistent quality, documentation ready for your files.",
   alternates: { canonical: "/property-management" },
+  openGraph: {
+    title: "Pressure Washing for Property Managers",
+    description: "Pressure washing for HOAs, apartment communities, and commercial portfolios in North Carolina and Virginia. One vendor, consistent quality, documentation ready for your files.",
+    url: `${business.url}/property-management`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pressure Washing for Property Managers",
+    description: "Pressure washing for HOAs, apartment communities, and commercial portfolios in North Carolina and Virginia. One vendor, consistent quality, documentation ready for your files.",
+  },
 };
 
 const vendorConcerns = [

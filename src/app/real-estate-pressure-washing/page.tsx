@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   description:
     "Listing-ready pressure washing for homes going on the market in North Carolina and Virginia. Driveway, siding, windows, and roof cleaning timed around your listing photos and showings.",
   alternates: { canonical: "/real-estate-pressure-washing" },
+  openGraph: {
+    title: "Pressure Washing for Home Sellers & Realtors",
+    description: "Listing-ready pressure washing for homes going on the market in North Carolina and Virginia. Driveway, siding, windows, and roof cleaning timed around your listing photos and showings.",
+    url: `${business.url}/real-estate-pressure-washing`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pressure Washing for Home Sellers & Realtors",
+    description: "Listing-ready pressure washing for homes going on the market in North Carolina and Virginia. Driveway, siding, windows, and roof cleaning timed around your listing photos and showings.",
+  },
 };
 
 const included = [

@@ -15,6 +15,17 @@ export const metadata: Metadata = {
   description:
     "Residential pressure washing and soft washing for homes in North Carolina and Virginia. House washing, driveway cleaning, roof washing, deck cleaning, gutter cleaning, and more.",
   alternates: { canonical: "/residential-pressure-washing" },
+  openGraph: {
+    title: "Residential Pressure Washing",
+    description: "Residential pressure washing and soft washing for homes in North Carolina and Virginia. House washing, driveway cleaning, roof washing, deck cleaning, gutter cleaning, and more.",
+    url: `${business.url}/residential-pressure-washing`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Residential Pressure Washing",
+    description: "Residential pressure washing and soft washing for homes in North Carolina and Virginia. House washing, driveway cleaning, roof washing, deck cleaning, gutter cleaning, and more.",
+  },
 };
 
 const reasons = [

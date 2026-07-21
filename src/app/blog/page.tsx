@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { business } from "@/lib/business";
 import Link from "next/link";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
@@ -9,6 +10,17 @@ export const metadata: Metadata = {
   description:
     "Practical pressure washing and exterior cleaning advice for homeowners and businesses in North Carolina and Virginia, from Under Pressure Xteriors.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | Pressure Washing Tips & Guides",
+    description: "Practical pressure washing and exterior cleaning advice for homeowners and businesses in North Carolina and Virginia, from Under Pressure Xteriors.",
+    url: `${business.url}/blog`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Pressure Washing Tips & Guides",
+    description: "Practical pressure washing and exterior cleaning advice for homeowners and businesses in North Carolina and Virginia, from Under Pressure Xteriors.",
+  },
 };
 
 function formatDate(iso: string) {

@@ -29,7 +29,13 @@ export async function generateMetadata({
       type: "article",
       title: post.title,
       description: post.description,
+      url: `${business.url}/blog/${post.slug}`,
       publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }

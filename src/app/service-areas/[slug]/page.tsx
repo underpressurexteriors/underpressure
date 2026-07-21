@@ -22,10 +22,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const loc = getLocation(slug);
   if (!loc) return {};
+  const title = `Pressure Washing in ${loc.city}, ${loc.state} | ${business.name}`;
+  const description = `Licensed and insured pressure washing, soft washing, and exterior cleaning in ${loc.city}, ${loc.stateFull}. ${loc.blurb} Free quotes from ${business.name}.`;
   return {
-    title: `Pressure Washing in ${loc.city}, ${loc.state} | ${business.name}`,
-    description: `Licensed and insured pressure washing, soft washing, and exterior cleaning in ${loc.city}, ${loc.stateFull}. ${loc.blurb} Free quotes from ${business.name}.`,
+    title,
+    description,
     alternates: { canonical: `/service-areas/${loc.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `${business.url}/service-areas/${loc.slug}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
