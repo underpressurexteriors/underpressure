@@ -53,8 +53,21 @@ body {
   font-family: var(--font-sans);
 }
 
-.reveal { opacity: 0; transform: translateY(22px); }
-.reveal.is-visible { animation: var(--animate-rise); }
+/* Scroll-reveal system, redesigned to fail safe:
+   - .reveal elements are VISIBLE BY DEFAULT (no opacity:0 here).
+   - JS (RevealInit) only hides an element if it confirms, on mount,
+     that the element is actually below the fold - then reveals it
+     via IntersectionObserver as the person scrolls to it.
+   - If JS never runs (slow connection, script error, disabled), every
+     .reveal element simply stays visible. Worst case: no animation.
+     There is no scenario where real content is stuck invisible. */
+.reveal.reveal-pending {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.reveal.is-visible {
+  animation: var(--animate-rise);
+}
 
 /* Hero content: animates automatically on paint, never gated behind JS/
    IntersectionObserver, so it can never be stuck invisible on a slow
@@ -73,7 +86,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .reveal.reveal-pending { opacity: 1 !important; transform: none !important; }
+  .reveal.is-visible { animation: none !important; }
   * {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
